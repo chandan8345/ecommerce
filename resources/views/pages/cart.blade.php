@@ -1,0 +1,14 @@
+@extends('master')
+@section('title','Cart')
+@section('loginheader')
+@include('sections.loginheader')
+@stop
+@section('header-bottom')
+@include('sections.header-bottom')
+@stop
+@section('header')
+@include('sections.header')
+@stop
+@section('cart')
+@include('sections.cart')
+@stop
