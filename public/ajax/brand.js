@@ -7,7 +7,7 @@ $('#frm').on('submit', function(e){
   e.preventDefault();
   $.ajax({
       type: 'POST',
-      url: 'http://localhost/vue/public/brandstore',
+      url: 'http://localhost/vue/ecommerce/public/brandstore',
       data: $("#frm").serialize(),
       success: function (response){
           $("#modal").modal('hide');
@@ -26,7 +26,7 @@ function remove(id){
     console.log(id);
     $.ajax({
         type: "GET",
-        url: 'http://localhost/vue/public/deletebrand',
+        url: 'http://localhost/vue/ecommerce/public/deletebrand',
       data:{
             id:id,
           },
@@ -40,7 +40,7 @@ function update(id){
   var name = $('#'+id).html();
   $.ajax({
     type: "GET",
-    url: 'http://localhost/vue/public/updatebrand',
+    url: 'http://localhost/vue/ecommerce/public/updatebrand',
   data:{
         id:id,
         name:name,
@@ -54,7 +54,7 @@ function update(id){
 function brandlist(){
   $.ajax({
       type: 'GET',
-      url: 'http://localhost/vue/public/brandlist',
+      url: 'http://localhost/vue/ecommerce/public/brandlist',
       success: function (response){
         //console.log(response);
         //  var trHTML='';var s=1;
