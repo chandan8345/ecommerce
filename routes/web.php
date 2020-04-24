@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+//template Links
 Route::get('/', function () {
     return view('pages.home');
 });
@@ -11,41 +11,56 @@ Route::get('/login','accessController@index');
 //productController
 Route::get('/product-details','productController@detailsindex');
 Route::get('/product','productController@productindex');
+
+//end template Link
 //dashboardController
 Route::get('/dashboard','dashboardController@dashboardindex');
 
-Route::get('/products','dashboardController@productindex');
-
-Route::get('/category','dashboardController@categoryindex');
-Route::get('/category-list','dashboardController@categorylistndex');
-Route::get('/update-category','dashboardController@updatecategoryindex');
-
-Route::get('/subcategory','dashboardController@subcategoryindex');
-Route::get('/subcategory-list','dashboardController@subcategorylist');
-Route::get('/update-subcategory','dashboardController@updatesubcategory');
-
-Route::get('/sub-subcategory','dashboardController@subsubcategoryindex');
-Route::get('/sub-subcategory-list','dashboardController@dashboardindex');
-Route::get('/update-sub-subcategory','dashboardController@sub-subcategory-list');
+//product
+Route::get('/product','productController@index');
+Route::get('/productlist','productController@productlist');
+Route::get('/updateproduct','productController@updateproduct');
+Route::get('/deleteproduct','productController@deleteproduct');
+Route::post('/productstore','productController@productstore');
 
 //Brand
-Route::get('/brand','dashboardController@brandindex');
-Route::get('/brandlist','dashboardController@brandlist');
-Route::get('/updatebrand','dashboardController@updatebrand');
-Route::get('/deletebrand','dashboardController@deletebrand');
-Route::post('/brandstore','dashboardController@brandstore');
+Route::get('/brand','brandController@index');
+Route::get('/brandlist','brandController@brandlist');
+Route::get('/updatebrand','brandController@updatebrand');
+Route::get('/deletebrand','brandController@deletebrand');
+Route::post('/brandstore','brandController@brandstore');
 
-Route::get('/user','dashboardController@userindex');
-Route::get('/user-list','dashboardController@dashboardindex');
-Route::get('/update-user','dashboardController@dashboardindex');
+//Category
+Route::get('/category','categoryController@index');
+Route::get('/categorylist','categoryController@categorylist');
+Route::get('/updatecategory','categoryController@updatecategory');
+Route::get('/deletecategory','categoryController@deletecategory');
+Route::post('/categorystore','categoryController@categorystore');
+
+//SubCategory
+Route::get('/subcategory','subcategoryController@index');
+Route::get('/subcategorylist','subcategoryController@subcategorylist');
+Route::get('/updatesubcategory','subcategoryController@updatesubcategory');
+Route::get('/deletesubcategory','subcategoryController@deletesubcategory');
+Route::post('/subcategorystore','subcategoryController@subcategorystore');
+
+//Sub_SubCategory
+Route::get('/subsubcategory','subsubcategoryController@index');
+Route::get('/subsubcategorylist','subsubcategoryController@subsubcategorylist');
+Route::get('/updatesubsubcategory','subsubcategoryController@updatesubsubcategory');
+Route::get('/deletesubsubcategory','subsubcategoryController@deletesubsubcategory');
+Route::post('/subsubcategorystore','subsubcategoryController@subsubcategorystore');
+
+//Users
+Route::get('/user','userController@index');
+Route::get('/userlist','userController@userlist');
+Route::get('/updateuser','userController@updateuser');
+Route::get('/deleteuser','userController@deleteuser');
+Route::post('/userstore','userController@userstore');
+
+//end Dashboard
 
 Route::get('/invoice','dashboardController@invoiceindex');
 //paymentController
 Route::get('/cart','paymentController@cartindex');
 Route::get('/checkout','paymentController@checkoutindex');
-//apiController
-
-Route::get('/data','myController@data');
-Route::get('/create','myController@create');
-Route::get('/update','myController@update');
-Route::get('/remove','myController@remove');

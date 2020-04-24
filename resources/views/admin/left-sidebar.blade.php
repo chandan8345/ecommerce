@@ -57,7 +57,7 @@
                                 </a>
                     </li>
                             <li>
-                                <a href="{{ URL::to('/sub-subcategory') }}">
+                                <a href="{{ URL::to('/subsubcategory') }}">
                                 <i class="material-icons">widgets</i>
                                     <span>Sub SubCategory</span>
                                 </a>
